@@ -9,8 +9,12 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\base\View;
 
 AppAsset::register($this);
+$this->on(View::EVENT_END_PAGE,function(){
+    echo 'This is Page end';
+});
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
