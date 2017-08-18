@@ -44,6 +44,16 @@ return [
             ],
         ],
         */
+        /*  'assetManager'=>[
+          'bundles'=>[
+              'yii\web\JqueryAsset'=>[
+                  'sourcePath'=>null,
+                  'js'=>[
+                      '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+                  ]
+              ]
+          ]
+      ]*/
     ],
     'params' => $params,
 ];
