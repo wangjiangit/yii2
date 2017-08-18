@@ -2,6 +2,7 @@
 use frontend\widgets\ListWidget;
 use frontend\widgets\HelloWidget;
 use yii\base\View;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 $this->title='城市';
 $this->params['breadcrumbs'][]='城市';
@@ -30,4 +31,5 @@ $this->on(View::EVENT_AFTER_RENDER,function($event){
        hello widgets
 <?php HelloWidget::end() ; //此时调用run?>
 
+<?= Url::to(['country/index','src'=>'web_1'],'http')?>
 
