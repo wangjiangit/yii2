@@ -32,4 +32,7 @@ $this->on(View::EVENT_AFTER_RENDER,function($event){
 <?php HelloWidget::end() ; //此时调用run?>
 
 <?= Url::to(['country/index','src'=>'web_1'],'http')?>
+<?= Url::home() ?>
+<?= Url::canonical()?>
+
 

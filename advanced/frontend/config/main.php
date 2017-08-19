@@ -36,14 +36,31 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
+
+       /* 'urlManager' => [
+            'enablePrettyUrl' => false,
             'showScriptName' => false,
+            'enableStrictParsing'=>fasle,
+            'suffix'=>'.html',
             'rules' => [
+                'city/<id:\d+>'=>'city/index',
+                [
+                    'pattern'=>'citymap',
+                    'route'=>'city/index',
+                    'suffix'=>'.json'
+                ],
+                [
+                    'pattern'=>'city/<action:(index|list)>/<id:\d{4}>',
+              //      'pattern'=>'GET city/<action:(index|list)>/<id:\d{4}>', //模式前面有HTTP方法的，只对 RESTful APIs 有效
+                    'route'=>'city/<action>',
+                    'defaults'=>['id'=>1],
+                    'suffix'=>'.shtml'
+                ],
+                'http://www.5izan.com/login'=>'site/login',
+                'http://<language:\w+>.5izan.com'=>'site/<language>'
             ],
-        ],
-        */
+        ],*/
+
         /*  'assetManager'=>[
           'bundles'=>[
               'yii\web\JqueryAsset'=>[
