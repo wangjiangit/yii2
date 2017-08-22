@@ -2,11 +2,16 @@
 
 namespace frontend\controllers;
 
+use EasyWeChat\Support\Arr;
 use Yii;
 use frontend\filters\TimeActionFilter;
+use frontend\helpers\OtherHelper;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
 use yii\web\Request;
 use yii\imagine\Image;
+
 
 class CityController extends \yii\web\Controller
 {
@@ -110,8 +115,13 @@ class CityController extends \yii\web\Controller
         );
          $cookies->remove('my_name');
         */
+      // echo OtherHelper::formatNumber(12.3456,OtherHelper::PRECISION_ONE);exit; //使用自定义助手类
 
-
+       /* $arr=[
+            ['id'=>new \stdClass(),'name'=>'wj','age'=>12],
+            ['id'=>2,'name'=>'wj21','age'=>20]
+        ];
+        var_dump(ArrayHelper::getValue($arr,'0'));exit;*/
 
         return $this->render('index');
 
