@@ -130,8 +130,8 @@ class CityController extends \yii\web\Controller
             ['id' => '456', 'data' => 'def','name'=>'bbb'],
         ];
 
-        /*$b= ArrayHelper::getColumn($data,function($element){
-            return $element['id'];
+       /* $b= ArrayHelper::getColumn($data,function($element){
+            return $element['id'].'-'.$element['name'];
         });*/
 
        /* $b=ArrayHelper::index($data,function($element){
@@ -160,6 +160,7 @@ class CityController extends \yii\web\Controller
         $obj->sex='nana';
         $b=ArrayHelper::toArray($obj);
         echo var_dump($b);exit;*/
+
 
         return $this->render('index');
 
