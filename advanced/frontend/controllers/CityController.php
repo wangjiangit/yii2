@@ -7,6 +7,7 @@ use Yii;
 use frontend\filters\TimeActionFilter;
 use frontend\helpers\OtherHelper;
 use yii\helpers\ArrayHelper;
+use yii\helpers\VarDumper;
 use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
 use yii\web\Request;
@@ -122,6 +123,43 @@ class CityController extends \yii\web\Controller
             ['id'=>2,'name'=>'wj21','age'=>20]
         ];
         var_dump(ArrayHelper::getValue($arr,'0'));exit;*/
+
+       // $a=['name'=>'wj','age'=>25];
+        $data = [
+            ['id' => '123', 'data' => 'abc','name'=>'aaa'],
+            ['id' => '456', 'data' => 'def','name'=>'bbb'],
+        ];
+
+        /*$b= ArrayHelper::getColumn($data,function($element){
+            return $element['id'];
+        });*/
+
+       /* $b=ArrayHelper::index($data,function($element){
+            return $element['id'].'-wj';
+        });*/
+
+        //$b=ArrayHelper::map($data,'id','data');
+
+        //ArrayHelper::multisort($data,['id','data'],[SORT_ASC,SORT_ASC]);
+
+       // $b=ArrayHelper::isAssociative($data);
+       // $b=ArrayHelper::isIndexed($data);
+      //  $b=ArrayHelper::htmlEncode($data,false);
+
+        $a=['name'=>'wj','age'=>20];
+        $b=[12,'zhongguo'];
+        $c=[12,'zhongguo'];
+        $d=[
+         'asdf'=> ['name'=>'wj','sec'=>1],
+          ['name'=>'wj','sec'=>1]
+        ];
+      //  $b=ArrayHelper::merge($a,$b,$c,$d);
+       // $b=ArrayHelper::isIn(20,$a);
+       /* $obj=new \stdClass();
+        $obj->name='wfsadf';
+        $obj->sex='nana';
+        $b=ArrayHelper::toArray($obj);
+        echo var_dump($b);exit;*/
 
         return $this->render('index');
 
