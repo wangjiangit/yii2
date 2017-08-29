@@ -36,7 +36,7 @@ $this->on(View::EVENT_AFTER_RENDER,function($event){
 <?= Url::home() ?>
 <?= Url::canonical()?>
 <?= Yii::getAlias('@webroot')?>
-<?php var_dump(Url::isRelative('/post/index'))  ?>
+<?php var_dump(Url::isRelative('/post/index')) ;?>
 
 
 <!-- HTML辅助类使用BEGIN -->
