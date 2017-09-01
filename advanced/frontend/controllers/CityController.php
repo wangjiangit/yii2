@@ -12,6 +12,7 @@ use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
 use yii\web\Request;
 use yii\imagine\Image;
+use yii\base\DynamicModel;
 
 
 class CityController extends \yii\web\Controller
@@ -160,6 +161,37 @@ class CityController extends \yii\web\Controller
         $obj->sex='nana';
         $b=ArrayHelper::toArray($obj);
         echo var_dump($b);exit;*/
+
+        //输入验证-----临时验证
+     /*   $email='jasdf@163.com';
+        $validator=new \yii\validators\EmailValidator();
+        $bool=$validator->validate($email,$error);
+        if($bool){
+            //通过
+        }else{
+            //不通过
+            echo $error;
+        }*/
+
+         //对一系列值执行多项验证
+      /*  $arr1=['name'=>'zhong','email'=>'jiji@163.com'];
+
+       $dynamicModel= DynamicModel::validateData($arr1,[
+            ['name','required','message'=>'不能为空'],
+            ['email','email','skipOnEmpty'=>false]
+        ]);
+       if( $dynamicModel->hasErrors()){
+            var_dump($dynamicModel->errors);exit;
+       }else{
+            exit('asdf');
+       }*/
+
+        //自定义的验证输入值
+         /*   $validate = new \frontend\validators\CountryValidator();
+           $bool= $validate->validate('C',$error);
+
+            var_dump($error);exit;*/
+
 
 
         return $this->render('index');
