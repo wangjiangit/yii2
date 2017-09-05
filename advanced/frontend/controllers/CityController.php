@@ -192,7 +192,7 @@ class CityController extends \yii\web\Controller
 
             var_dump($error);exit;*/
 
-
+        var_dump(Yii::$app->security->encryptByPassword());exit;
 
         return $this->render('index');
 
