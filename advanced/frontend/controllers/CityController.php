@@ -13,7 +13,7 @@ use yii\web\NotFoundHttpException;
 use yii\web\Request;
 use yii\imagine\Image;
 use yii\base\DynamicModel;
-
+use yii\helpers\HtmlPurifier;
 
 class CityController extends \yii\web\Controller
 {
@@ -192,8 +192,41 @@ class CityController extends \yii\web\Controller
 
             var_dump($error);exit;*/
 
-        var_dump(Yii::$app->security->encryptByPassword());exit;
+      $formatter= Yii::$app->formatter;
 
+      // echo  $formatter->asDate('2017-9-8','php:Y-n-j');
+
+      /*  echo $formatter->asPercent('0.12354',2);
+        echo $formatter->asBoolean(null);
+        echo $formatter->asDate(null);
+        echo $formatter->format('0.123',['percent',2]);
+        echo $formatter->format('2017-8-9',['date','php:Y-m-d']);
+        echo $formatter->format('2017-8-9',function($value,$formatter){
+            return strtotime($value);
+        });*/
+
+       /* echo  $formatter->asDate('2017-9-8','long');
+        echo $formatter->asDate('now','yyyy-MM-dd');
+        echo $formatter->asTime('14:15:34');
+        echo $formatter->asDatetime('2017-9-8 14:15:34');
+        echo $formatter->asTimestamp('2017-9-8 00:00:01');
+        echo $formatter->asRelativeTime('2017-9-8 00:00:01');
+        echo $formatter->asDuration(121);*/
+
+        echo $formatter->asInteger(12.65);
+        echo $formatter->asDecimal('1356555.4546654555',3);
+        echo $formatter->asScientific('155654645655665.2');
+       // echo $formatter->asCurrency('15232.12');
+        //echo $formatter->asSize(1024*1024);
+        echo $formatter->asShortSize(1024*1024);
+        echo $formatter->asRaw(null);
+        echo $formatter->asNText('<a>zhon \n gg</a>');
+        echo $formatter->asParagraphs('asdf');
+        echo $formatter->asHtml('<a>http://www.baiud.com</a><script>aaaaa</script>');
+
+       // $formatter->booleanFormat=['N','Y'];
+
+         exit;
         return $this->render('index');
 
     }
