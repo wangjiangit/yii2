@@ -225,7 +225,6 @@ class CityController extends \yii\web\Controller
         echo $formatter->asHtml('<a>http://www.baiud.com</a><script>aaaaa</script>');
 
        // $formatter->booleanFormat=['N','Y'];
-
          exit;
         return $this->render('index');
 
