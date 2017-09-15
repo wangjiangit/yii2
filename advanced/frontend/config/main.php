@@ -98,7 +98,7 @@ return [
                 'thousandSeparator' => ' ',
                 'currencyCode' => 'EUR',
             ]*/
-        'mailer' => [
+      /*  'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
             'transport' => [
@@ -109,7 +109,7 @@ return [
                 'port' => '25',
                 'encryption' => 'tls',
             ],
-        ],
+        ],*/
     ],
     'params' => $params,
 ];
