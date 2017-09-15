@@ -24,11 +24,11 @@ return [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
-       /* 'session'=>[
-          'class'=>'yii\web\DbSession',
-          'db'=>'db',
-          'sessionTable'=>'session'
-        ],*/
+        /* 'session'=>[
+           'class'=>'yii\web\DbSession',
+           'db'=>'db',
+           'sessionTable'=>'session'
+         ],*/
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'flushInterval' => 1000,
@@ -40,20 +40,20 @@ return [
                     //'logVars'=>[],
                     //  'exportInterval'=>1000
                 ],
-               /* 'db1_log'=>[
-                    'class'=>'yii\log\DbTarget',
-                    'levels'=>['error','warning'],
-                    'logVars'=>[],
-                    'db'=>'db',
-                    'logTable'=>'log',
-                    'exportInterval'=>1000
-                ]*/
+                /* 'db1_log'=>[
+                     'class'=>'yii\log\DbTarget',
+                     'levels'=>['error','warning'],
+                     'logVars'=>[],
+                     'db'=>'db',
+                     'logTable'=>'log',
+                     'exportInterval'=>1000
+                 ]*/
             ],
         ],
         'errorHandler' => [
-          //  'maxSourceLines'=>19,
-         //   'displayVars'=>[],
-          //    'errorView'=>'@yii/views/errorHandler/error.php',//显示不包含函数调用栈信息的错误信息是使用， 当YII_DEBUG 为 false时，所有错误都使用该视图。
+            //  'maxSourceLines'=>19,
+            //   'displayVars'=>[],
+            //    'errorView'=>'@yii/views/errorHandler/error.php',//显示不包含函数调用栈信息的错误信息是使用， 当YII_DEBUG 为 false时，所有错误都使用该视图。
             // 'exceptionView'=>@yii/views/errorHandler/exception.php, // 显示包含函数调用栈信息的错误信息时使用。
             'errorAction' => 'site/error',
         ],
@@ -92,12 +92,24 @@ return [
               ]
           ]
       ]*/
-    /*    'formatter'=>[
-            'dateFormat' => 'dd.MM.yyyy',
-            'decimalSeparator' => ',',
-            'thousandSeparator' => ' ',
-            'currencyCode' => 'EUR',
-        ]*/
+        /*    'formatter'=>[
+                'dateFormat' => 'dd.MM.yyyy',
+                'decimalSeparator' => ',',
+                'thousandSeparator' => ' ',
+                'currencyCode' => 'EUR',
+            ]*/
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.163.com',
+                'username' => 'jiji_12342006@163.com',
+                'password' => '',
+                'port' => '25',
+                'encryption' => 'tls',
+            ],
+        ],
     ],
     'params' => $params,
 ];

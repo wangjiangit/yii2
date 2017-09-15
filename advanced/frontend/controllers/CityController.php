@@ -213,7 +213,7 @@ class CityController extends \yii\web\Controller
         echo $formatter->asRelativeTime('2017-9-8 00:00:01');
         echo $formatter->asDuration(121);*/
 
-        echo $formatter->asInteger(12.65);
+       /* echo $formatter->asInteger(12.65);
         echo $formatter->asDecimal('1356555.4546654555',3);
         echo $formatter->asScientific('155654645655665.2');
        // echo $formatter->asCurrency('15232.12');
@@ -222,9 +222,12 @@ class CityController extends \yii\web\Controller
         echo $formatter->asRaw(null);
         echo $formatter->asNText('<a>zhon \n gg</a>');
         echo $formatter->asParagraphs('asdf');
-        echo $formatter->asHtml('<a>http://www.baiud.com</a><script>aaaaa</script>');
+        echo $formatter->asHtml('<a>http://www.baiud.com</a><script>aaaaa</script>');*/
 
        // $formatter->booleanFormat=['N','Y'];
+        /*   Yii::$app->mailer->compose('home-link')->setFrom('jiji_12342006@163.com')
+                ->setSubject('login success')->attach(Yii::getAlias('@runtime/image/a.jpg'))
+                ->setTo('www_5izan@163.com')->send();*/
          exit;
         return $this->render('index');
 
