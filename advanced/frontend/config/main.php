@@ -11,6 +11,12 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'forum'=>[
+            'class'=>'frontend\modules\forum\Module',
+          //  'layout'=>false,//在Module.php文件中init方法中配置也行
+        ]
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -98,18 +104,18 @@ return [
                 'thousandSeparator' => ' ',
                 'currencyCode' => 'EUR',
             ]*/
-      /*  'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.163.com',
-                'username' => 'jiji_12342006@163.com',
-                'password' => '',
-                'port' => '25',
-                'encryption' => 'tls',
-            ],
-        ],*/
+        /*  'mailer' => [
+              'class' => 'yii\swiftmailer\Mailer',
+              'useFileTransport' => false,
+              'transport' => [
+                  'class' => 'Swift_SmtpTransport',
+                  'host' => 'smtp.163.com',
+                  'username' => 'jiji_12342006@163.com',
+                  'password' => '',
+                  'port' => '25',
+                  'encryption' => 'tls',
+              ],
+          ],*/
     ],
     'params' => $params,
 ];
