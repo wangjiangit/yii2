@@ -14,6 +14,8 @@ use yii\web\Request;
 use yii\imagine\Image;
 use yii\base\DynamicModel;
 use yii\helpers\HtmlPurifier;
+use yii\helpers\StringHelper;
+use yii\helpers\FileHelper;
 
 class CityController extends \yii\web\Controller
 {
@@ -228,7 +230,24 @@ class CityController extends \yii\web\Controller
         /*   Yii::$app->mailer->compose('home-link')->setFrom('jiji_12342006@163.com')
                 ->setSubject('login success')->attach(Yii::getAlias('@runtime/image/a.jpg'))
                 ->setTo('www_5izan@163.com')->send();*/
-         exit;
+       //echo  Yii::getAlias('@runtime');
+       // $fileDependence=new \yii\caching\FileDependency(['fileName'=>'@runtime']);
+        //$phpExpressDependence= new \yii\caching\ExpressionDependency(['expression'=>'date("Y-m-d H:i")']);
+       // $cache=Yii::$app->cache;
+       // $cache->set('person:1:age',23,0,$phpExpressDependence);
+       // $cache->add('person:1:age','25');
+        // var_dump($cache->get('person:1:age'));
+      // $cache->delete('person:1:age');
+        //var_dump($cache->exists('person:1:age'));
+       // $cache->flush();
+
+       //查询缓存
+        /*$count= Yii::$app->db->cache(function($db){
+           return  $db->createCommand("SELECT count(*) FROM country")->queryScalar();
+        },30);*/
+
+     //  print_r(FileHelper::getMimeType(Yii::getAlias('@runtime/image/a.jpg'))) ;
+    exit;
         return $this->render('index');
 
     }

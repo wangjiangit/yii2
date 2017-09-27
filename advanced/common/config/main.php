@@ -8,7 +8,11 @@ return [
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            'keyPrefix'=>'frontend_app'
         ],
+       /* 'cache1'=>[
+            'class'=>'yii\caching\DbCache',
+        ],*/
         'authManager'=>[
             'class'=>'yii\rbac\DbManager'
         ]
