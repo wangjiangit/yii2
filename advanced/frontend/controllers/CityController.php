@@ -16,6 +16,9 @@ use yii\base\DynamicModel;
 use yii\helpers\HtmlPurifier;
 use yii\helpers\StringHelper;
 use yii\helpers\FileHelper;
+use frontend\events\Foo;
+use frontend\events\FooEvent;
+use yii\base\Event;
 
 class CityController extends \yii\web\Controller
 {
@@ -247,6 +250,28 @@ class CityController extends \yii\web\Controller
         },30);*/
 
      //  print_r(FileHelper::getMimeType(Yii::getAlias('@runtime/image/a.jpg'))) ;
+
+        //实例级别调用
+       /* $fooMessage=new FooEvent();
+        $foo=new Foo();
+        $foo->on(Foo::EVENT_HELLO,function($event){
+           var_dump($event->sender);
+        });
+        $foo->trigger(Foo::EVENT_HELLO,$fooMessage);
+       $foo->off(Foo::EVENT_HELLO); //移除所有事件
+       */
+
+        //类级别调用
+      /*  Event::on(Foo::className(),Foo::EVENT_HELLO,[Foo::className(),'say'],[1,2,3]);
+        Event::trigger(Foo::className(),Foo::EVENT_HELLO);*/
+
+        //全局事件
+    /*    Yii::$app->on('bar', function ($event) {
+            echo get_class($event->sender);  // 显示 "app\components\Foo"
+        });
+        Yii::$app->trigger('bar', new Event(['sender' => new Foo()]));*/
+
+        
     exit;
         return $this->render('index');
 
