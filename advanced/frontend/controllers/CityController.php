@@ -19,6 +19,7 @@ use yii\helpers\FileHelper;
 use frontend\events\Foo;
 use frontend\events\FooEvent;
 use yii\base\Event;
+use yii\di\ServiceLocator;
 
 class CityController extends \yii\web\Controller
 {
@@ -271,7 +272,27 @@ class CityController extends \yii\web\Controller
         });
         Yii::$app->trigger('bar', new Event(['sender' => new Foo()]));*/
 
-        
+       // 当你发布一个 Yii 组件封装一些非 Yii 第三方库时,可采用服务定位器
+        //采用服务定位器注册组件方式1
+       // $serverContioner=new ServiceLocator();
+       /* $serverContioner->set('hello',function(){
+            return new \frontend\librarys\Hello();
+        });*/
+        /*$serverContioner->set('hello',[
+            'class'=>'frontend\librarys\Hello',
+            'message'=>'ok message'
+        ]);*/
+      //  var_dump($serverContioner->get('hello')->say());
+
+        //采用服务定位器注册组件方式2,由于 Yii::$app本事也是服务定位器
+        /*Yii::$app->set('hello',[
+            'class'=>'frontend\librarys\Hello',
+            'message'=>'ok message'
+        ]);
+        var_dump(Yii::$app->get('hello')->say());*/
+
+
+
     exit;
         return $this->render('index');
 
