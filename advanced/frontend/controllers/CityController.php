@@ -289,8 +289,11 @@ class CityController extends \yii\web\Controller
             'class'=>'frontend\librarys\Hello',
             'message'=>'ok message'
         ]);
-        var_dump(Yii::$app->get('hello')->say());*/
+        //检测组件是否存在
+        Yii::$app->has('hello');
+        var_dump(Yii::$app->get('hello')->say());
 
+        */
 
 
     exit;
