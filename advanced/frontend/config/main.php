@@ -67,7 +67,7 @@ return [
         /* 'urlManager' => [
              'enablePrettyUrl' => false,
              'showScriptName' => false,
-             'enableStrictParsing'=>fasle,
+             'enableStrictParsing'=>false,
              'suffix'=>'.html',
              'rules' => [
                  'city/<id:\d+>'=>'city/index',
