@@ -3,6 +3,7 @@ namespace console\controllers;
 
 use yii\console\Controller;
 use yii\helpers\Console;
+use yii\console\ExitCode;
 
 class HelloController extends Controller
 {
@@ -30,7 +31,9 @@ class HelloController extends Controller
     {
         $this->stdout("格式如下：\r\n",Console::BG_GREEN);
         echo '这是选项：'.$this->message.'这是参数'.$message1;
-        return 0;
+        $this->stdout('结果'.ExitCode::getReason(ExitCode::OK));
+      //  return 0;
+        return ExitCode::OK;
     }
 
 
