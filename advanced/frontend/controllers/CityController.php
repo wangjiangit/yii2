@@ -295,7 +295,17 @@ class CityController extends \yii\web\Controller
 
         */
 
+      //  echo StringHelper::byteLength('a中');
+        //echo StringHelper::basename('/root/a/asdf.txt/b');
+        //echo StringHelper::dirname('/root/a/asdf.txt/b');
+       // echo StringHelper::truncate('ab中def',3);
+      //  echo StringHelper::startsWith('ab中def','ab');
+      //  var_dump( StringHelper::explode('ab中def','ab',true,true));
+       // echo StringHelper::countWords('zhong guo  中');
+      //  echo StringHelper::normalizeNumber('1234567,89');
+      //  echo StringHelper::base64UrlEncode('ok'.time());
 
+       // echo FileHelper::createDirectory(Yii::getAlias('@runtime').DIRECTORY_SEPARATOR.'dir1');
     exit;
         return $this->render('index');
 
