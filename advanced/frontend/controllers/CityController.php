@@ -306,6 +306,8 @@ class CityController extends \yii\web\Controller
       //  echo StringHelper::base64UrlEncode('ok'.time());
 
        // echo FileHelper::createDirectory(Yii::getAlias('@runtime').DIRECTORY_SEPARATOR.'dir1');
+      // $data= Yii::$app->getSecurity()->encryptByPassword('abc','cccc');
+       // echo Yii::$app->getSecurity()->decryptByPassword($data,'ccccc');
     exit;
         return $this->render('index');
 
